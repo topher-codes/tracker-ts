@@ -1,13 +1,24 @@
 'use client';
+import { useRouter } from 'next/navigation';
 
 import PocketBase from 'pocketbase';
 
 const client = new PocketBase('http://127.0.0.1:8090');
 
 export default function DeleteNote({ id }: any) {
-	return <button onClick={() => handleDelete(id)}>Delete Me</button>;
+	const router = useRouter();
+	return (
+		<button
+			onClick={() => {
+				handleDelete(id);
+				router.refresh();
+			}}
+		>
+			Delete Me
+		</button>
+	);
 }
 
-const handleDelete = async (id: any) => {
-	await client.records.delete('tasks', `${id}`);
+const handleDelete = (id: any) => {
+	client.records.delete('tasks', `${id}`);
 };
