@@ -28,7 +28,7 @@ export default async function NotesPage() {
 }
 
 function Note({ note }: any) {
-	const { id, title, ritm, created } = note || {};
+	const { id, title, ritm, created, contact } = note || {};
 	return (
 		<div>
 			<Link href={`/notes/${id}`}>
@@ -36,6 +36,7 @@ function Note({ note }: any) {
 					<h2>{title}</h2>
 					<h5>{ritm}</h5>
 					<p>{created}</p>
+					<p>Contact Level: {contact}</p>
 				</div>
 			</Link>
 			<DeleteNote id={note.id} />

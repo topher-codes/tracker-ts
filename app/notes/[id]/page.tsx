@@ -20,6 +20,7 @@ export default async function NotePage({ params }: any) {
 				<h3>{note.title}</h3>
 				<h5>{note.ritm}</h5>
 				<p>{note.created}</p>
+				<p>{note.contact}</p>
 			</div>
 		</div>
 	);

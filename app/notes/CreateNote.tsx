@@ -17,8 +17,9 @@ export default function CreateNote() {
 			},
 			body: JSON.stringify({
 				title,
-				content,
+				ritm: content,
 				color: 'green',
+				contact: 1,
 			}),
 		});
 
