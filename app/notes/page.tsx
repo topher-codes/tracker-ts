@@ -2,6 +2,7 @@ import Link from 'next/link';
 import CreateNote from './CreateNote';
 import styles from './Notes.module.css';
 import DeleteNote from './DeleteNote';
+import UpdateNote from './UpdateNote';
 
 async function getNotes() {
 	const res = await fetch(
@@ -23,16 +24,19 @@ export default async function NotesPage() {
 				})}
 			</div>
 			<CreateNote />
+			<div className={styles.spacer}>
+				<UpdateNote />
+			</div>
 		</div>
 	);
 }
 
 function Note({ note }: any) {
-	const { id, title, ritm, created, contact } = note || {};
+	const { id, title, ritm, created, contact, color } = note || {};
 	return (
 		<div>
 			<Link href={`/notes/${id}`}>
-				<div className={styles.note}>
+				<div className={styles[color]}>
 					<h2>{title}</h2>
 					<h5>{ritm}</h5>
 					<p>{created}</p>
