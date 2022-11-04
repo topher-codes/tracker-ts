@@ -1,5 +1,9 @@
 'use client';
 
+import PocketBase from 'pocketbase';
+
+const client = new PocketBase('http://127.0.0.1:8090');
+
 export default function UpdateNote() {
 	return (
 		<div>
@@ -26,8 +30,12 @@ async function updateNote() {
 		// Take current date and compare to updated date. If they are the same, set needsUpdate to false
 		// If they are different, set needsUpdate to true
 
-		// if (notes[i].lastUpdate !== d.getDate()) {
-
-		// }
+		if (!(notes[i].lastUpdate == d.getDate())) {
+			await client.records.update('tasks', `${notes[i].id}`, {
+				lastUpdate: `${d.getDate()}`,
+			});
+		} else {
+			console.log('Already Updated');
+		}
 	}
 }
