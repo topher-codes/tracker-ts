@@ -1,5 +1,7 @@
 'use client';
 
+import { getNotes } from './lib/GetNotes';
+
 import PocketBase from 'pocketbase';
 
 const client = new PocketBase('http://127.0.0.1:8090');
@@ -10,15 +12,6 @@ export default function UpdateNote() {
 			<button onClick={updateNote}>Update</button>
 		</div>
 	);
-}
-
-async function getNotes() {
-	const res = await fetch(
-		'http://127.0.0.1:8090/api/collections/tasks/records?page=1&perPage=30',
-		{ cache: 'no-store' }
-	);
-	const data = await res.json();
-	return data?.items as any[];
 }
 
 async function updateNote() {

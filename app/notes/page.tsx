@@ -3,6 +3,7 @@ import CreateNote from './CreateNote';
 import styles from './Notes.module.css';
 import DeleteNote from './DeleteNote';
 import UpdateNote from './UpdateNote';
+import RefreshNotes from './RefreshNotes';
 
 async function getNotes() {
 	const res = await fetch(
@@ -24,6 +25,9 @@ export default async function NotesPage() {
 				})}
 			</div>
 			<CreateNote />
+			<div className={styles.spacer}>
+				<RefreshNotes />
+			</div>
 			<div className={styles.spacer}>
 				<UpdateNote />
 			</div>
