@@ -17,7 +17,7 @@ export default function UpdateNote() {
 async function updateNote() {
 	const notes = await getNotes();
 	const d = new Date();
-	console.log(d.getDate());
+
 	for (let i: number = 0; i < notes.length; i++) {
 		console.log(notes[i]);
 		// Take current date and compare to updated date. If they are the same, set needsUpdate to false
