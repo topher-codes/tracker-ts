@@ -1,5 +1,6 @@
 'use client';
 import { useRouter } from 'next/navigation';
+import { AiFillDelete } from 'react-icons/ai';
 
 import PocketBase from 'pocketbase';
 
@@ -14,7 +15,7 @@ export default function DeleteNote({ id }: any) {
 				router.refresh();
 			}}
 		>
-			Delete Me
+			<AiFillDelete></AiFillDelete>
 		</button>
 	);
 }

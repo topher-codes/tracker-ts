@@ -1,5 +1,8 @@
 import Link from 'next/link';
 import './globals.css';
+import RefreshNotes from './notes/RefreshNotes';
+import UpdateNote from './notes/UpdateNote';
+import NotePage from './notes/[id]/page';
 
 export default function RootLayout({
 	children,
@@ -15,6 +18,8 @@ export default function RootLayout({
 						<Link href="/">Home</Link>
 						<Link href="/tasks">Tasks</Link>
 						<Link href="/notes">Notes</Link>
+						<UpdateNote />
+						<RefreshNotes />
 					</nav>
 					{children}
 				</main>

@@ -1,5 +1,7 @@
 'use client';
 
+import Modal from './Modal';
+
 import { getNotes } from './lib/GetNotes';
 
 import PocketBase from 'pocketbase';
@@ -9,7 +11,10 @@ const client = new PocketBase('http://127.0.0.1:8090');
 export default function UpdateNote() {
 	return (
 		<div>
-			<button onClick={updateNote}>Update</button>
+			<button id="modal" onClick={updateNote}>
+				Update
+			</button>
+			<Modal></Modal>
 		</div>
 	);
 }

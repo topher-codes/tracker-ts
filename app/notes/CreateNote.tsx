@@ -20,6 +20,8 @@ export default function CreateNote() {
 				ritm: content,
 				color: 'green',
 				contact: 1,
+				// lastUpdate: new Date().getDate(),
+				lastUpdate: 0,
 			}),
 		});
 

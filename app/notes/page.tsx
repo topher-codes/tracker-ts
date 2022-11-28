@@ -17,7 +17,7 @@ async function getNotes() {
 export default async function NotesPage() {
 	const notes = await getNotes();
 	return (
-		<div>
+		<div className="container">
 			<h1>Notes</h1>
 			<div className={styles.grid}>
 				{notes?.map((note) => {
@@ -43,11 +43,11 @@ function Note({ note }: any) {
 				<div className={styles[color]}>
 					<h2>{title}</h2>
 					<h5>{ritm}</h5>
-					<p>{created}</p>
-					<p>Contact Level: {contact}</p>
 				</div>
 			</Link>
-			<DeleteNote id={note.id} />
+			<div className="">
+				<DeleteNote id={note.id} />
+			</div>
 		</div>
 	);
 }
