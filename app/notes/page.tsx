@@ -18,7 +18,6 @@ export default async function NotesPage() {
 	const notes = await getNotes();
 	return (
 		<div className="container">
-			<h1>Notes</h1>
 			<div className={styles.grid}>
 				{notes?.map((note) => {
 					return <Note key={note.id} note={note} />;

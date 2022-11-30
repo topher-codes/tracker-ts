@@ -46,6 +46,9 @@ export default function App() {
 				<h2 ref={(_subtitle) => (subtitle = _subtitle)}>
 					The following emails have been sent : Contact
 				</h2>
+				<h2 ref={(_subtitle) => (subtitle = _subtitle)}>
+					Service-Now tickets have been updated
+				</h2>
 				<button onClick={closeModal}>X</button>
 				<div>Press Update</div>
 			</Modal>

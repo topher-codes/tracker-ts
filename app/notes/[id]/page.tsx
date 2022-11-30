@@ -19,8 +19,8 @@ export default async function NotePage({ params }: any) {
 			<div className={styles.note}>
 				<h3>{note.title}</h3>
 				<h5>{note.ritm}</h5>
-				<p>{note.created}</p>
-				<p>{note.contact}</p>
+				<p>Date Created: {note.created}</p>
+				<p>Contact Level: {note.contact}</p>
 			</div>
 		</div>
 	);
